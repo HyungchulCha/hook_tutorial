@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../static/css/app-base.css';
-import App from './App';
+import A from './hook/useState/A';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <div>
+    <A />
+  </div>,
+  document.getElementById('root')
+);
