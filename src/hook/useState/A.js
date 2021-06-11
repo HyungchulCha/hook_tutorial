@@ -16,6 +16,11 @@ const A = () => {
     setCount1((prevState) => ({ ...prevState, value: prevState.value + 1 }));
     setCount2((prevState) => ({ ...prevState, value: prevState.value + 1 }));
   }
+
+  const result1 = count1 >= count2;
+  const result2 = count1 < count2;
+  console.log(result1, result2); // 항상 true, false
+
   function onChangeText(e) {
     setInputText((prevState) => ({ ...prevState, name: e.target.value }));
   }
@@ -23,14 +28,10 @@ const A = () => {
     setInputText((prevState) => ({ ...prevState, age: e.target.value }));
   }
 
-  const result1 = count1 >= count2;
-  const result2 = count1 < count2;
-  console.log(result1, result2);
-
   useEffect(() => {
     // 4. 리액트 외부에서 관리되는 이벤트 처리함수의 경우에는 상태값 변경이 배치로 처리되지 않는다.
     // document.querySelector('#domClick').addEventListener('click', onClick);
-    // return document.querySelector('#domClick').removeEventListener('click', onClick);
+    // return () => document.querySelector('#domClick').removeEventListener('click', onClick);
     // 5. 4번 수정
     document.getElementById('domClick').addEventListener('click', onClickBatch);
     return () => document.getElementById('domClick').removeEventListener('click', onClickBatch);
