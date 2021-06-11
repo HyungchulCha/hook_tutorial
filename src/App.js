@@ -1,7 +1,12 @@
 import React from 'react';
+import A from './hook/useState/A';
 
 const App = () => {
-  return <div>App1234567890</div>;
+  return (
+    <div>
+      <A />
+    </div>
+  );
 };
 
 export default App;
