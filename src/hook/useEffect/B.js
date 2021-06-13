@@ -10,6 +10,7 @@ const B = ({ userId }) => {
   }
 
   const [user, setUser] = useState(null);
+
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users?id=${userId}`)
       .then((res) => res.json())

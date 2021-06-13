@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useUser, useWindow } from '../customHook/D';
+import { useUser, useWindowWidth } from '../customHook/D';
 
-const B = ({ userId }) => {
+const C = ({ userId }) => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     document.title = `update count: ${count}`;
@@ -28,4 +28,4 @@ const B = ({ userId }) => {
   );
 };
 
-export default B;
+export default C;
